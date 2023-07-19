@@ -2,8 +2,8 @@ version: v1.0
 name: Verification Pipeline
 agent:
   machine:
-    type: e1-standard-2
-    os_image: ubuntu1804
+    type: e2-standard-2
+    os_image: ubuntu2004
   containers:
     - name: main
       image: 'registry.semaphoreci.com/android:29'
@@ -21,7 +21,7 @@ blocks:
   - name: Build
     task:
       jobs:
-        - name: Build Project
+        - name: Build Project 2
           commands:
             - ./gradlew bundleDebug
       epilogue:
